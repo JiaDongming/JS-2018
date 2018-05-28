@@ -6,4 +6,5 @@ sdfsss
 test
 from vs code
 again
+auto sync
 
