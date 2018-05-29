@@ -6,6 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="calendar.css">
+    <script>
+        window.onload = function () {
+            var oDiv=document.getElementById('tab');
+            var oLi=oDiv.getElementsByTagName('li');
+            
+                    for(var i=0; i<oLi.length;i++)
+                    {
+                   
+                        oLi[i].onmouseover=function () {
+                         
+                            oLi[i].className='';
+                         
+                        }
+                     
+                           this.className='active';
+                        
+                    }
+        }
+       
+
+    </script>
 </head>
 <body>
     <div id="tab" class="calendar">
