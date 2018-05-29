@@ -7,29 +7,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="calendar.css">
     <script>
-        window.onload = function () {
+     window.onload =function(){
             var oDiv=document.getElementById('tab');
             var oLi=oDiv.getElementsByTagName('li');
-            
-                    for(var i=0; i<oLi.length;i++)
+            var i=0
+                    for(i=0; i<oLi.length;i++) 
                     {
-                   
-                        oLi[i].onmouseover=function () {
+                        oLi[i].index=i;
+                        oLi[i].onmouseover=function () 
+                        {
+                            for(var i=0;i<oLi.length;i++){
+                                  oLi[i].className=''; 
+                            }
+                            console.log(i);
+                           this.className='active'; 
+                         }
                          
-                            oLi[i].className='';
-                         
-                        }
-                     
-                           this.className='active';
-                        
                     }
-        }
-       
+  
+      }
 
     </script>
 </head>
 <body>
-    <div id="tab" class="calendar">
+    <div id="tab" class="calendar" >
         <ul>
             <li class="active"><h2>1</h2><p>JAN</p></li>
             <li><h2>2</h2><p>FEB</p></li>
