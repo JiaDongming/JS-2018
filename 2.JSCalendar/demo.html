@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="calendar.css">
     <script>
      window.onload =function(){
+            var array=[
+                '快过年了，大家去哪玩？',
+                '过年了，放鞭炮么？',
+                '三月了，又得上班了',
+                '4月清明雨纷纷，路上行人',
+                '5月不减肥，徒伤悲',
+                '6月开始入暑',
+                '7月太热了',
+                '8月更热了',
+                '9月开学了',
+                '10月国庆有的玩了',
+                '11月没什么节假日',
+                '12月黑色星期五'
+            ];
             var oDiv=document.getElementById('tab');
             var oLi=oDiv.getElementsByTagName('li');
             var oText=oDiv.getElementsByTagName('div')[0];
@@ -21,10 +35,10 @@
                             for(var i=0;i<oLi.length;i++){
                                   oLi[i].className=''; 
                             }
-                  console.log("test");
                            this.className='active'; 
+                           oText.innerHTML='<h2>'+(this.index+1)+'月活动</h2> <p>'+array[this.index]+'</p>';
                          }
-                         
+                       
                     }
   
       }
