@@ -7,6 +7,91 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- 横线 -->
+    <hr>
+    <!-- img标签：属性有alt，title，width，height ；src有相对路径和绝对路径-->
+    <img src="https://www.baidu.com/img/bd_logo1.png" alt="..图片找不到了" width="300px" >
+    <hr>
+    <!-- br标签：换行 -->
+    这里有换行
+    <br>
+   <hr>
+
+    <!-- a标签，控制页面与页面之间的跳转的；
+    a标签格式： <a href="指定需要跳转的界面"></a>
+    a标签注意点
+    1.必须得有href属性，必须以http://或者https://开头
+    2.是否需要用新选项卡用target属性有_blank 和_self值
+    3.title属性，鼠标悬停时的提示文本 -->
+    <a href="http://www.baidu.com" target="_blank" title="跳转到百度">百度</a>
+
+    <hr>
+    <!-- base标签
+    base标签就是专门用来统一的指定当前网页中的超链接的打开方式
+    注意点：base标签必须写在head标签的开始和结束之间
+    <base target="_blank">     
+    -->
+
+    <!-- 假链接 
+    当为#时，点了会返回顶部；
+    当为javascript：的时候，不会返回顶部-->
+    <a href="#">click 1</a>
+    <a href="javascript:">click 2</a>
+     
+    <hr>
+    <!-- 锚点 ：跳转到指定位置，通过id属性指定位置
+    a标签除了可以通过锚点跳转到当前页面的指定位置之外
+    还可以跳转到另外页面的指定位置-->
+    <a href="#bottom1">锚点测试：跳转到底部</a>
+    <br>
+    <a href="字符集.html#test" target="_blank">锚点测试：跳转到另外页面的指定位置</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2 id="bottom1">我是底部</h2>
+
+    <hr>
+    <!-- 列表标签
+    分类：1. 无序列表 unordered list -- ul
+        2. 有序列表 ordered list --ol
+        3. 定义列表 definition list --dl
+        list item --li
+
+        ul 和 li标签是一个整体，都是结合一起使用；
+
+        无序列表应用场景：
+            导航条
+            新闻列表
+            商品列表
+    -->
+    <h2>中国的城市有哪些？</h2>
+    <ul>
+        <li>北京</li>
+        <li>广州</li>
+        <li>杭州 </li>
+    </ul>
 </body>
 </html>
