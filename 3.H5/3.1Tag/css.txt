@@ -1,0 +1,227 @@
+1. css是什么？
+    层叠样式表
+
+
+
+2. 可以用style 或者通过link引入css文件 以及直接赋style方式 设置网页样式
+
+    <h2 id="bottom1">我是底部</h2>
+    <h2 id="bottom2">我是底部2</h2>
+
+    <style>
+        #bottom1 {
+            color: red;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="./test.css" />
+
+     <h2 style="color:green">我是底部2</h2>
+
+
+3. css语法规则:告诉浏览器要把html修饰成什么样子，学习各种样式去修饰html标签
+    产生关联的方式：
+    ID<===> #
+
+总结：要学好，学习1：如何关联；2.如何去修饰
+
+    书写css规则：
+    选择器{
+        属性名称:属性值;
+        属性名称2：属性值;
+        ...
+    }
+
+    选择器：选择/查找 html标签的方法 
+    a. ID选择器(唯一性，不会出现多次)                      #自定义名称 
+    b. 类选择器(修饰同一类型，多个元素具有相同样式的时候)    .自定义名称
+    c. 标签选择器                                         标签名选择
+
+
+4. 颜色:取色器
+   a. rgb(255, 0, 255) rgb模式 r 红色 g 绿色  b 蓝色 rgb的取值范围是(0-255)
+   b. 颜色名称
+   c. 十六进制 #9f0000
+   d. rgba(红色，绿色，蓝色，透明度) 0完全透明 1不透明 a的取值(0-1)
+
+5. 边框
+    px:像素，盒子
+    solid:实线 
+    dotted:点线
+    dashed：虚线
+    
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            /* border-width: 4px;
+                border-style: solid; 
+                border-color: blue;
+            */
+            /*以上三条可以合并成以下一条  */
+            /* border: 4px solid blue; */
+
+            /*设置上边为蓝色 实线 */
+            border-top: 4px solid blue;
+
+            /*设置虚线  */
+             border-bottom: 4px dashed red;
+
+              /*设置点线  */
+             border-left: 4px dotted green;
+        }
+    </style>
+
+    边框圆角
+       /*边框圆角  */
+              border-radius: 20px; 
+        /*设置圆  */
+             border-radius: 50%;
+
+6. 背景相关
+
+     <style type="text/css">
+        #box {
+            width: 1280px;
+            height: 1280px;
+            /*设置背景颜色  */
+            /* background: green; */
+            background: url("https://techexcel.devsuite.net/p1/static/img/bg.98ccaf9.png") no-repeat;
+           
+            /*设置图片位置  */
+            background-position-y: 200px;
+            /* background-image: url("https://techexcel.devsuite.net/p1/static/img/bg.98ccaf9.png")  */
+
+            /*设置边框  */
+            border: 2px solid black ;
+
+            /*简写  */
+            background: gray url("https://techexcel.devsuite.net/p1/static/img/bg.98ccaf9.png") no-repeat 10px 200px
+        }
+    </style>
+
+7. 字体相关属性
+
+    <style type="text/css">
+        p {
+              /*设置字体大小  */
+              font-size: 80px;
+              /*字体加粗  */
+              font-weight: bold;
+              /*字体颜色  */
+              color: #336633;
+              /*字体类型  serif：如果没有微软雅黑，则用serif显示 */
+              font-family: "微软雅黑",serif;
+        }
+      
+    </style>      
+
+8.文本相关的属性
+    <style type="text/css">
+        p {
+            border: 1px solid red;
+            height: 50px;
+            /*让文字水平居中  */
+            /* text-align: center; */
+
+            /*让文字垂直居中  */
+            line-height: 50px;
+
+            /*首行缩进 */
+            text-indent: 50px;
+
+            /*单词间距  */
+            letter-spacing: 10px;
+
+        }
+    </style>
+
+
+总结： css如何使用
+a. 找到元素:选择器
+b. 修饰元素: css相关属性包括文字，边框，背景，文本，颜色
+
+10. div+css布局
+    画盒子
+    关键词：盒子，位置
+
+    margin
+    padding
+    float
+    position
+
+    学的是什么？
+        从本质上来说，如何去摆放盒子(div)的位置
+
+    
+    盒子模型
+        盒子属性： 
+            宽度:width
+            高度:height
+            边框:border
+            内边距:padding
+            外边距:margin
+
+        作用：用来摆放盒子/内容 的位置
+        规律：margin,border,padding,都具有四边
+
+        border-left
+        border-right
+        border-bottom
+        border-top
+
+        简写：border: top,right,bottom,left
+    margin：
+            如果上下两个盒子间隔都设置了margin(上面盒子设置了margin-bottom,下面盒子设置了margin-top)，那么以大的那个为基准。塌陷现象
+
+            盒子居中：
+
+            /*非常常用的一条代码，盒子居中 ，盒子必须设置宽高 */
+                margin: 20px auto; 
+            
+
+    padding：    实现把里面盒子往右边移 
+
+        方法1：
+             /*把里面盒子往右边移  */
+            margin-left:30px; 
+        方法2：
+         /*外部盒子属性：把里面盒子往右边移,但是会撑宽外部盒子  */
+            padding-left: 30px;
+
+
+        需要注意的问题：
+            设置了padding以后，会把外层盒子整体撑大
+            影响：整个网页的布局
+        
+        盒子的总宽度： width + padding-left/right+ border-left/right
+
+11. 块级元素和行内元素
+
+    块级元素：独占一行，可以设置宽高
+        div h1 p li
+
+    行内元素：一行内显示，不可以设置宽高
+        span i a img input
+
+   /*把行内元素转成块级元素，不在一行内显示，支持设置宽高  */
+            display: block;
+
+            /*把行内元素转成块级元素，在一行内显示，支持设置宽高  */
+            display: inline-block;
+
+    /*把块级元素转成行内元素,原本宽高失效  */
+        div {
+                width: 200px;
+                height: 100px;
+                background-color: blue;
+                margin: 10px 0;
+
+                /*把块级元素转成行内元素,原本宽高失效  */
+                /* display: inline;  */
+
+                /*设置是否显示 none表示不显示 */
+                display: none;
+            }
+
+12. 练习-实现网页导航
