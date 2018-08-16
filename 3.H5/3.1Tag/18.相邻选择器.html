@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>相邻选择器</title>
+    <style type="text/css">
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+        .box+span {
+            /* 相邻选择器： 选择某个元素后面相邻的元素 */
+            color: blue;
+        }
+        .box+p{
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+            box
+    </div>
+    <span>text</span>
+    <p>hahah</p>
+</body>
+</html>

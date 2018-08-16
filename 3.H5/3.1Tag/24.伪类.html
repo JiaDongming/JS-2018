@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪类</title>
+    <style  type="text/css">
+     a:link {
+        color: red;
+    }
+
+    a:active {
+        color: yellow;
+    }
+
+    a:hover {
+        color: green;
+    }
+
+    a:visited {
+        color: teal;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        float: left;
+        text-align: center;
+        width: 100px;
+        height: 60px;
+        line-height: 60px;
+        background-color: black;
+        color: white;
+    }
+    .li1:hover {
+        /* 伪类，实现类的效果，最常用的是hover */
+        background-color: green;
+    }
+    </style>
+</head>
+<body>
+    <a href="http://www.techexcel.com.cn">太克塞尔中国</a>
+    <ul>
+        <li class="li1">首页</li>
+        <li>方案产品</li>
+        <li>案例</li>ß
+    </ul>
+</body>
+</html>

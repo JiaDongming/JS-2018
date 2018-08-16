@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素</title>
+    <style type="text/css">
+    /* 伪元素： 在内容之后 插入content的内容 */
+     a::after{
+         content: "搜索一下";
+         color: red;
+     }
+     /* 伪元素： 在内容之前 插入content的内容 */
+     a::before {
+         content: "中国人";
+         color: green;
+     }
+
+     .box {
+         width: 300px;
+     
+     }
+     .left {
+         width: 100px;
+         height: 100px;
+         background-color: blue;
+         float: left;
+     }
+     .right {
+         width: 200px;
+         height: 100px;
+         background-color: red;
+         float: right;
+     }
+     .box2 {
+         width: 500px;
+         height: 100px;
+         background-color: black;
+     } 
+     .clearfix:after {
+         /* 用于清除浮动 效果类似在浮动元素后，添加元素，定义css为clear:both*/
+         content: ".";
+         display: block;
+         height: 0;
+         visibility: hidden;
+         clear: both;
+     }
+    </style>
+</head>
+<body>
+    <a href="">百度</a>
+
+    <div class="box clearfix">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+</html>

@@ -235,7 +235,17 @@ b. 修饰元素: css相关属性包括文字，边框，背景，文本，颜色
  14.    浮动带来的问题：有可能会影响到后面元素的布局
                     解决办法：在浮动过后的元素要清除浮动
 
+             .clear {
+            clear: both;
+        }
 
+        <div class="main">
+        <!-- 网页左边部分 -->
+        <div class="left"></div>
+        <!-- 网页右边部分 -->
+        <div class="right"></div>
+        <div class="clear"></div>
+    </div>
 16. 定位:可以把元素摆放到任意位置
 相对定位： position:relative
     参照物：根据谁来做这个定位的? 
@@ -261,3 +271,119 @@ b. 修饰元素: css相关属性包括文字，边框，背景，文本，颜色
 固定定位：position:fixed
     参照物：浏览器
     应用场景：滚动后，需要保持悬浮不动到，比如广告，顶部导航栏，底部蓝等等。
+
+17. 练习
+
+18. 选择器
+
+基础选择器：
+    id选择器==> #
+    class选择器==> .
+    标签选择器==> 标签
+
+相邻选择器: ==> + 
+    选择某个元素后面相邻的元素  .box+span
+
+多元素选择器 ==> ,
+    多个元素具有相同的属性，可以提取做成公用，用逗号隔开
+  .box1,.box2,.box3 {
+            /* 多个元素具有相同的属性，可以提取做成公用，用多元素选择器 */
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+
+后代选择器：==> 空格 
+        用空格来选择，可以影响后面很多层； 可以节省很多代码。
+        应用场景：选择符合条件的后代元素
+     .box p {
+            /* 后代选择器：选中.box下面的所有后代p元素选择器 */
+            color: red;
+        }
+
+子元素选择器：==>  >
+    应用场景：符合条件的子元素
+
+    子元素选择器与后代选择器的区别：选择层级的不同,都是用来方便的选择元素
+        子元素选择器：只选择当前元素的孩子，只能选择下一层
+        后代选择器：选中当前元素的所有后代，能选中n层
+
+      .box>span {
+        color: yellow;
+    }
+
+属性选择器: ==> 元素[属性=属性值]
+    应用场景：选择具有某些属性的元素
+    name
+    name=value
+    name^=value
+    name$=value
+       input[name] {
+            /* 选中到具有name属性到元素
+            属性：开始标签后面 属性名=“值”  
+            可以理解为：[选择条件]*/
+            border: 1px solid red;
+        }
+        input[type=password] {
+             /* 选中到具有name属性到元素
+            属性：开始标签后面 属性名=“值”  
+            可以理解为：[选择条件]*/
+            border: 3px solid yellow;
+        }
+          div[name^=xiao] {
+            /* ^= 表示以什么开头的会被选中 */
+            width: 200px;
+            height: 300px;
+            border: 3px dashed red;
+        }
+        input[type$=d] {
+            /* $= 表示以什么结尾 */
+            border: 3px dashed yellowgreen;
+        }
+
+23:伪类和伪元素:
+
+    伪元素： 清除浮动
+
+                /* 伪元素： 在内容之后 插入content的内容 */
+            a::after{
+                content: "搜索一下";
+                color: red;
+            }
+            /* 伪元素： 在内容之前 插入content的内容 */
+            a::before {
+                content: "中国人";
+                color: green;
+            }
+
+            .clearfix:after {
+                /* 用于清除浮动 效果类似在浮动元素后，添加元素，定义css为clear:both*/
+                content: ".";
+                display: block;
+                height: 0;
+                visibility: hidden;
+                clear: both;
+            }
+    
+    伪类：实现类的效果，最常用的是hover
+        应用场景:悬浮，点击，激活等效果
+            .li1:hover {
+        /* 伪类，实现类的效果，最常用的是hover */
+        background-color: green;
+            }
+
+            a:link {
+                color: red;
+            }
+
+            a:active {
+                color: yellow;
+            }
+
+            a:hover {
+                color: green;
+            }
+
+            a:visited {
+                color: teal;
+            }
