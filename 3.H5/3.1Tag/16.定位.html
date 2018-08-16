@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>相对,绝对，固定定位</title>
+    <style class="text/css">
+        body{
+            margin: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: relative;
+            left: 100px;
+        }
+
+        .box1{
+            width: 600px;
+            height: 400px;
+            background-color: aquamarine;
+            margin: 200px auto;
+            border: 1px solid white;
+            position: relative;
+        }
+
+        .box2{
+            width: 400px;
+            height: 200px;
+            background-color: blue;
+            margin: 50px auto;
+       
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            position: absolute;
+          
+            top: 20px;
+            right:50px;
+            border-radius: 50%;
+        }
+        .txt {
+            display: inline-block;
+            position:absolute;
+            text-align: center;
+            left: 40px;
+            top: 30px;
+            font-size: 200%;
+        }
+        .topbar {
+            height: 60px;
+            width: 100%;
+            background-color: #383838;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+    </div>
+    
+    <div class="box1">
+        <div class="box2">
+            <div class="box3">
+                <span class="txt">1</span>
+                </div>
+        </div>
+    </div>
+
+    <div class="topbar">
+
+    </div>
+</body>
+</html>
