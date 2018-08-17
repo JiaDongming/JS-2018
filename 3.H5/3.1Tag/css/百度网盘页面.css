@@ -1,0 +1,279 @@
+/* css样式重置 html元素会有一些默认样式，会影响我们布局 */
+/* 公共的样式 */
+body,p,ul,li,input {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* 浮动 */
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+
+.clearfix{
+    *zoom: 1;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+/* 头部内容 */
+.header {
+    height: 60px;
+    border-bottom: 1px solid #dcdcdc;
+    /* 最小宽度，如果浏览器小于，就出现滚动条，要不然容易破坏布局 */
+    min-width: 1000px;
+}
+
+.header-left {
+    width: 260px;
+    height: 60px;
+   
+}
+
+/* 让a和span里的文字消失，通过图片来显示 */
+/* 后代选择器和多元素选择器 */
+.header-left a,.header-left span {
+    /*  */
+    text-indent: -999px;
+    display:  inline-block;
+}
+
+.header-left a {
+    width:160px;
+    height: 40px;
+    background: url(../img/download-all.gif) no-repeat -643px 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.header-left span {
+    width: 70px;
+    height: 35px;
+    background: url(../img/download-all.gif) no-repeat -691px -46px;
+ 
+}
+
+.header-right {
+    width: 300px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-top: 40px;
+}
+
+.header-right a{
+    color: #2974b6;;
+}
+
+.header-right .first-one {
+    color: #f39a8d;
+}
+
+/* 下载平台导航 */
+.download-menu{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fafafa;
+}
+.download-menu a{
+    text-indent: -9999px;
+    display: block;
+   
+}
+
+.tab-menu {
+    margin-left: 230px;;
+    height: 94px;
+}
+.tab-menu li{
+    width: 161px;
+    height: 93px;
+    
+    float: left;
+   
+}
+.tab-menu li a{
+    display: block;
+    width: 145px;
+    margin-top: 30px;
+    height: 40px;
+    background: url(../img/download-all.gif) no-repeat
+}
+/* 能够选中tabmenu下中所有li的第一个元素下的a标签 */
+.tab-menu li:nth-of-type(1) a{
+    background-position: -13px -127px;
+}
+.tab-menu li:nth-of-type(1) a:hover{
+    background-position: -13px -183px;
+}
+
+.tab-menu li:nth-of-type(2) a{
+    background-position: -180px -127px;
+}
+.tab-menu li:nth-of-type(2) a:hover{
+    background-position: -180px -183px;
+}
+
+.tab-menu li:nth-of-type(3) a{
+    background-position: -370px -127px;
+}
+.tab-menu li:nth-of-type(3) a:hover{
+    background-position: -370px -183px;
+}
+
+.tab-menu li:nth-of-type(4) a{
+    background-position: -515px -127px;
+}
+.tab-menu li:nth-of-type(4) a:hover{
+    background-position: -515px -183px;
+}
+
+.tab-menu li:nth-of-type(5) a{
+    background-position: -650px -127px;
+}
+.tab-menu li:nth-of-type(5) a:hover{
+    background-position: -650px -183px;
+}
+
+.tab-menu li:nth-of-type(6) a{
+    background-position: -796px -183px;
+}
+
+/* 具体下载信息 */
+.download-info {
+    width: 100%;
+    height: 440px;
+    background: url(https://pan.baidu.com/static/images/new/download_bg.png?r=201807113431?t=20151112) repeat-x;
+}
+
+.download-info-conent {
+    position: relative;
+    width: 960px;
+    height: 440px;
+    margin: 0 auto;
+    background: url(https://pan.baidu.com/static/images/new/mac.jpg?r=201807113431?t=20151112) no-repeat;
+}
+
+.download-info-txt {
+    width: 275px;
+    height: 140px;
+    color: white;
+    position: absolute;
+    top: 205px;
+    left: 589px;
+
+}
+
+.download-info-txt p{
+    font-size: 12px;
+    line-height: 22px; 
+}
+
+.download-info-txt a{
+    display: block;
+    width: 170px;
+    height: 62px;
+    text-indent: -9999px;
+    background: url(../img/download-all.gif) no-repeat -693px -294px;
+    margin-top: 10px;
+}
+
+/* 底部下载客户端 */
+.download-bottom{
+    height: 200px;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 30px;
+}
+.download-method　{
+    /* 设置下边框 */
+ 
+}
+.download-method-content {
+    width: 960px;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.download-method-left input,.download-method-left button,.download-method-left img {
+    height: 33px;
+    /* 垂直剧中对齐 */
+    vertical-align: middle;
+    margin-top: 20px;
+}
+
+.download-method-left .txt-title {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.download-method-left .phone{
+    width: 190px;
+}
+.download-method-left .check-code {
+    width: 113px;
+    margin-left: 6px;
+}
+
+.download-method-left .btn {
+    color: white;
+    background-color: #5196f7;
+    width: 100px;
+    height: 33px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.download-method-right {
+    /* width: 400px; */
+  
+}
+
+.download-method-right .code-left{
+    width: 170px;
+    margin-left: 56px;
+   
+}
+
+.code-left p{
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.code-left span {
+    font-size: 12px;
+}
+
+.code-right img{
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer a{
+    font-size: 12px;
+    color:#666 ;
+}
