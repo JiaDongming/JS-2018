@@ -399,3 +399,77 @@ b. 修饰元素: css相关属性包括文字，边框，背景，文本，颜色
     2. 布局：margin，padding，float，position
     3. 选择器：空格--后代选择器； css 标签 多元素选择器
     注意：掌握选择器，并且灵活运动，会减少代码；
+
+25. 表格
+    结构：
+        table
+            tr
+                th
+                td
+    单元格合并：
+        rowspan="4" --行合并
+        colspan="7"  --列合并
+
+26: 表单
+    是什么？ --收集用户的工具
+    有什么用？ 登陆，注册，搜索 可以把收集好的数据发给后台
+    怎么使用？form：
+        要发送数据，必须设置name属性，并且有type=submit的提交表单的按钮
+
+        外层套一个form:
+            action:表单提交的地址（收集好的数据传哪里）
+            method: 表示表单发送数据的方式,默认使用get方式
+                get：再浏览器地址看到发送的内容
+                post
+                涉及数据库修改用post；查询用get
+            name属性：是通用属性
+   
+    input标签***********
+        type属性: 
+            text
+            password
+            submit：提交表单
+            button：普通按钮 点击以后不会触发提交form的提交行为，应用场景，留给js控制什么时候发数据。
+            checkbox:复选框
+            radio:单选框，注意：要实现单选，要把几个input加同一个name属性值
+            hidden:隐藏域： 应用场景，当数据不想被客户看见的时候
+            file:文件上传工具：作用：选择上传的文件。
+
+    input标签其他属性
+        name
+        value
+        readonly：表示只读，只针对输入框， 数据可以被发送过去
+        disabled：表示控件无效，不能用，数据是不能被发送出去。
+        checked:表示选中状态，针对checkbox radio。
+    
+    textarea:标签
+        name
+        rows
+        cols
+
+    button标签
+
+    select标签：下拉选择框，和  option标签一起用
+        name是加再select上；value是加再option上
+        size属性：表示可见选项的条数
+        multiple属性:表示可以多选
+    
+    label标签：可以扩大选区。
+
+ <form action="">
+        <select name="city" id="" size="2" multiple>
+            <option value="bj">北京</option>
+            <option value="">上海</option>
+            <option value="">杭州</option>
+        </select>
+        <br>
+        <label for="man">男</label>
+        <input id="man" type="radio" name="sex"> 
+        <input type="radio" name="sex">女 <br>
+        <input type="file">上传附件 <br>
+        <input type="checkbox" checked>这是一个默认选中的checkbox <br>
+        <input type="text" name="t1" value="t1" readonly> readonly：表示只读，只针对输入框， 数据可以被发送过去<br>
+        <input type="text" name="t2" value="t2" disabled> 表示控件无效，不能用，数据是不能被发送出去。 <br>
+        <input type="submit" value="提交">
+    </form>
+      
