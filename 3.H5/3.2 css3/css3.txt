@@ -1,0 +1,132 @@
+1. 背景样式
+    纯颜色：background-color:red;
+        颜色： 
+            英文
+            rgb(255,255,0)
+            #ffffff
+            rgba(255,255,255,0.5) ---- css3添加的，透明度 再0到1之间；
+
+     背景图片: 
+              background： 
+              background-image: url()
+              background-repeat: no-repeat ; repeat-x; repeat-y
+              background-position:
+              background-attachment: fixed ---背景固定
+
+2. 段落
+    text-indent:2em --当前字体到倍数； 缩进去2个文字 。单位可以自定义。一般用em多。
+        单位可以是：%,mm,em,cm,In,px,pt
+
+    line-height: 行间距-- 值可以是数字，normal，或者带单位到尺寸。
+
+    text-align: 文字对齐. 值可以是center,left,right和justify
+
+    word-spacing:10px; 控制英文单词之间到空间
+
+    letter-spacing:10px： 每个字符之间到间距
+
+    text-transform: --变大小写，针对英文单词
+        uppercase:大写
+        lowercase ：小写
+        capitalize：文本以大写字母开头
+
+    text-decration: none，underline,overline,line-through 对文字到装饰
+
+    white-space: 
+        normal
+        pre, 
+        pre-wrap
+        nowrap
+        pre-line:
+
+    direction:rtl
+
+3. 字体
+    font-family:
+      1.指定大类
+        serif--矢量字体，大多数英文字体
+        sas-serif --没有多余到装修线条
+        monospace --等宽到
+        cursive --手写的
+        fantasy --
+      2. 指定具体的字体
+        hei --黑体
+        Times --
+    
+    font-style:
+        obique
+
+    font-variant: small-caps
+    font-weight: bold, 100~900
+    font-size:
+        2em: 建议，不是绝对字体。
+        10px;
+
+4. 效果
+    text-shadow: 文本 阴影 --css3效果，可以出很cool的文字效果。
+        3px  5px 5px rgba(0,255,0,0.5)
+    
+    outline-style
+    outlien-width
+
+5. 列表
+    list-style-type: 
+        disc
+        circle
+        square
+    
+    list-style-image: url
+
+    list-style-position:
+        inside
+        outside
+    
+    list-style: outside circle
+
+6. 表格
+    border:1px solid red; 
+    border-callapse: collapse --合并多条线为一条线
+    width： 会影响同一列的所有格子
+    height： 会影响同行的所有格子
+    text-align
+    vertical-align
+    padding
+    caption-side: 制定再表的上部还是下部
+    table-layout: fixed 或者 automatic
+
+7. css框模型
+    padding
+    margin
+    border
+    当两个相邻的元素，都有外边句的时候，会选大的那个
+
+8. css定位
+  普通流：  默认是流式布局
+                通过定位可以突破这个布局，随意定位元素位置。
+                
+                div
+                p
+            新增的h5标记：可以理解为预先起了名字的div
+                footer
+                header
+   position:
+            relative:相对定位，相对自身定位
+            absolute:绝对定位，相对最近的一个含有position定位的父元素定位。
+            fixed：固定定位，相对浏览器定位
+
+   float： 浮动定位
+        left
+        right
+
+9. 选择器：
+    id选择器
+    元素选择器
+    类选择器
+
+    
+        
+
+
+
+
+

@@ -1,0 +1,30 @@
+模板
+WXML提供模板（template），可以在模板中定义代码片段，然后在不同的地方调用。
+
+定义模板
+使用 name 属性，作为模板的名字。然后在<template/>内定义代码片段，如：
+
+<template name="device">
+  <block> 
+    <view>设备名称: {{name}}</view>
+    <view>设备价格: {{price}}</view>
+    <view>购买日期: {{buydate}}</view>
+  </block>
+ </template>
+
+使用模板
+使用 is 属性，声明需要的使用的模板，然后将模板所需要的 data 传入，如：
+注意:...对象名的意思是传入整个对象,并且展开对象
+
+<template is="device" data="{{...device}}"/>
+
+Page({
+  data: {
+    device:{
+      name: 'mac air 13',
+      price: '5800',
+      buydate: '2018/08',
+    },
+  },
+ 
+})

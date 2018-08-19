@@ -1,0 +1,8 @@
+1. 引入外部(公共)js中定义的函数
+  第一步：module.exports={
+      ceshi2:ceshi
+  }
+
+  第二步：
+    const utils=require("./utils/utils.js")
+    utils.ceshi2
