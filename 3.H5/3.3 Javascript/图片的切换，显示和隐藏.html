@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片的显示，切换和隐藏</title>
+    <style>
+    img {
+        height: 550px;
+    }
+    </style>
+    <script>
+        window.onload = function(){
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            var image = document.getElementById("image");
+            
+            var maxIndex = 5, minIndex = 1, currentIndex = minIndex
+            prev.onclick = function (){
+     
+                if(currentIndex === minIndex) {
+                    currentIndex = maxIndex;
+                }else
+                {
+                    currentIndex--
+                }
+                image.setAttribute("src","img/"+ currentIndex +".png");
+            }
+
+             next.onclick = function (){
+        
+                if(currentIndex === maxIndex) {
+                    currentIndex = minIndex;
+                }else
+                {
+                    currentIndex++
+                }
+                image.setAttribute("src","img/"+ currentIndex +".png");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+    <p></p>
+    <img src="img/1.png" alt="" id="image">
+   
+</body>
+</html>
