@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放假倒计时--国庆节</title>
+    <style>
+    #time {
+        font-size: 50px;
+        color: red;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div id="time"></div>
+    <script>
+    window.onload = function(){
+        // 定义国庆节
+        var nextDate = new Date('2018/10/01 00:00:00');
+
+        // 设置定时器获取当前时间
+        setInterval(function(){
+            // 获取当前时间
+            var currentDate = new Date();
+
+            // 获取距离1970到毫秒时间
+            var nextTime = nextDate.getTime();
+            var currentTime = currentDate.getTime();
+
+            var alltime = nextTime-currentTime;
+
+            // 获取总剩余秒
+            var allSec = parseInt(alltime/1000);
+            
+            // 获取剩余到天，小时，分钟
+            var d = parseInt (allSec/3600/24);
+
+            var h =  parseInt(allSec/3600%24);
+
+            var m = parseInt(allSec/60%60);
+
+            var s = parseInt(allSec%60);
+
+            var time = document.getElementById("time");
+            time.innerText="距离国庆节放假还有"+d+"天"+h+"小时"+m+"分钟"+s+"秒";
+
+        },1000);
+    }
+    </script>
+</body>
+</html>
