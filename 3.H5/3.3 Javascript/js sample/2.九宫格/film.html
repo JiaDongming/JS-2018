@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>九宫格算法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #top {
+            padding: 20px;
+        }
+
+        #bottom {
+            position: relative;
+        }
+
+        .box {
+            width: 120px;
+            height: 200px;
+            margin: 0 15px 15px 0;
+        }
+
+        .box p:nth-child(2) {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <button>3列</button>
+        <button>4列</button>
+        <button>5列</button>
+    </div>
+    <div id="bottom">
+        <div class="box">
+            <img src="https://tu.66vod.net/2018/3313.jpg" alt="">
+            <p>最后一个音符</p>
+            <p>2018-09-03</p>
+        </div>
+        <div class="box">
+            <img src="http://tu2.66vod.net/tupian/2012/00126.jpg" alt="">
+            <p>技术学校</p>
+            <p>2018-09-03</p>
+        </div>
+        <div class="box">
+            <img src="https://tu.66vod.net/2018/2715.jpg" alt="">
+            <p>死侍2[2160p]</p>
+            <p>2018-09-03</p>
+        </div>
+        <div class="box">
+            <img src="https://tu.66vod.net/2018/3128.jpg" alt="">
+            <p>特工</p>
+            <p>2018-09-03</p>
+        </div>
+        <div class="box">
+            <img src="https://tu.66vod.net/2018/2715.jpg" alt="">
+            <p>死侍2[2160p]</p>
+            <p>2018-09-03</p>
+        </div>
+        <div class="box">
+            <img src="https://tu.66vod.net/2018/3128.jpg" alt="">
+            <p>特工</p>
+            <p>2018-09-03</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            //获取标签，包括按钮以及整体外部盒子
+            var btns = document.getElementById("top").children;
+            var bottom = document.getElementById("bottom");
+
+            // 监听按钮的点击，根据三列，四列，五列
+            // 通过九宫格算法，定位每个盒子都位置，通过对外部盒子设置相对定位，内部每一个盒子设置绝对定位，
+            // 通过九宫格算法，算出每个盒子都left 和 top，遍历循环赋值，实现  
+            btns[0].onclick = function () {
+                i_flex(3, bottom);
+            }
+
+             btns[1].onclick = function () {
+                i_flex(4, bottom);
+            }
+
+              btns[2].onclick = function () {
+                i_flex(5, bottom);
+            }
+
+            function i_flex(allCols, parentNode) {
+                // 定位盒子的宽度，高度，以及旁边空隙宽度
+                var boxW = 120, boxH = 200, marginXY = 15;
+
+                // 遍历循环所有div盒子
+                for (var i = 0; i < parentNode.children.length; i++) {
+                    // 根据要排列都列数，取得每个盒子都所处都行数和列数
+                    var row = parseInt(i / allCols);
+                    var col = parseInt(i % allCols);
+                    console.log("当前盒子在第" + row + "行，在第" + col + "列");
+
+                    // 盒子通过九宫格定位
+                    var currentBox = parentNode.children[i];
+                    // 根据九宫格算法，根据每个盒子都行数和列数，求的每个盒子都left和top值
+                    currentBox.style.position = "absolute";
+                    currentBox.style.left = col * (boxW + marginXY) + "px";
+                    currentBox.style.top = row * (boxH + marginXY) + "px";
+                }
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
