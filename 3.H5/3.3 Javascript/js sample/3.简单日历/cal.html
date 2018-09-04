@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单日历</title>
+    <style>
+        #cal {
+            width: 250px;
+            height: 300px;
+            background-color: orange;
+            margin: 100px auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        #cal_top {
+            font-size: 23px;
+            color: #fff;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cal_center {
+            width: 80%;
+            height: 70%;
+            background-color: orchid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 布局 -->
+    <div id="cal">
+        <div id="cal_top"></div>
+        <div id="cal_center"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            // 创建日期对象
+            var now = new Date();
+
+            // 获取年月日 星期几
+            var y = now.getFullYear();
+            var m = now.getMonth() + 1;
+            var d = now.getDate();
+
+            var week = now.getDay() + 1;
+
+            var weeks = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            console.log(y, m, d, weeks[week]);
+
+            // 赋值 
+            $('cal_top').innerText = y + "年" + m + "月" + d + "号 " + weeks[week];
+            $('cal_center').innerText = d;
+
+        }
+        function $(id) {
+            return typeof id === "string" ? document.getElementById(id) : null;
+        }
+
+    </script>
+</body>
+
+</html>
