@@ -16,12 +16,32 @@
         #box {
             width: 800px;
             border: 1px solid #ccc;
-            margin: 100px auto; 
+            margin: 100px auto;
             padding: 20px;
             display: flex;
             flex-direction: column;
 
-        }   
+        }
+
+        #bx_top {
+            margin-bottom: 20px;
+        }
+
+        #my_text {
+            width: 80%;
+            display: flex;
+        }
+
+        li {
+            width: 80%;
+            border-bottom: 1px dashed #ccc;
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        li a {
+            float: right;
+        }
     </style>
 </head>
 
@@ -29,17 +49,55 @@
     <div id="box">
         <div id="bx_top">
             <label>发表评论：</label>
-            <textarea id="my_text" cols="30" rows="10">
-            </textarea>
+            <textarea id="my_text" cols="30" rows="10"></textarea>
             <button id="btn">发表</button>
         </div>
 
         <ul id="ul">
-            <li>和额呵呵呵<a href="#">删除</a></li>
+
         </ul>
 
     </div>
 
+
+    <script>
+        window.onload = function () {
+            // 坚挺按钮点击
+            $("btn").onclick = function () {
+                // h获取用户输入都内容
+                var val = $("my_text").value;
+                // console.log(val);
+
+                // 判断用户输入都内容是否为空
+                if (val.length === 0) {
+                    alert("请先输入内容");
+                    return;
+                }
+
+                // 插入一个li
+                var li = document.createElement("li");
+                li.innerHTML = val + "<a href='javascript:;'>删除</a>";
+                // $("ul").appendChild(li);
+                $("ul").insertBefore(li, $("ul").children[0]);
+
+                // clear textared content
+                $("my_text").value = "";
+
+                // 删除评论
+                var as = $("ul").getElementsByTagName("a");
+                for(var i = 0; i<as.length; i++){
+                    as[i].onclick = function (){
+                            this.parentNode.remove();
+                        }
+                }
+               
+            }
+        };
+
+        function $(id) {
+            return typeof id === "string" ? document.getElementById(id) : null;
+        }
+    </script>
 </body>
 
 </html>
