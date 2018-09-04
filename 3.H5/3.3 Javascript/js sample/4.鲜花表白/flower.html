@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js特效 鲜花表白</title>
+    <style>
+    body {
+        background-color:black;
+        text-align: center;
+        padding: 100px;
+    }
+     #time {
+         font-size: 100px;
+         color: red;
+         margin: 0 auto;
+
+     }
+      img {
+          display: none;
+      }
+    </style>
+</head>
+<body>
+    <div id="time">5</div>
+    <img id="pic" src="img/timg.jpeg" alt="">
+
+    <script>
+    window.onload = function(){
+        // 启动定时器，并且赋予变量
+      var timer =  setInterval(function(){
+            // 定时器函数内部，每隔一秒减1
+            $("time").innerText -= 1;
+            console.log(typeof $("time").innerText );
+            // 当值为0时，则停止指定到定时器，并且把鲜花照片显示
+            if( $("time").innerText === "0"){
+                clearInterval(timer);
+                $("time").style.display = "none";
+                $("pic").style.display = "block";
+            }
+        },1000);
+    }
+    function $(id){
+        return typeof id === "string"? document.getElementById(id):null;
+    }
+    </script>
+</body>
+</html>
