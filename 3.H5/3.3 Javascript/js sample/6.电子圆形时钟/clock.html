@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>电子圆形时钟</title>
+    <style>
+        .clock {
+            width: 600px;
+            height: 600px;
+            background: url(img/clock.jpg) no-repeat;
+            margin: 50px auto;
+            position: relative;
+        }
+        
+        .clock div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .h {
+            background: url(img/hour.png) no-repeat center center;
+        }   
+        .m {
+            background: url(img/min.png) no-repeat center center;
+        }
+        .s {
+            background: url(img/sec.png) no-repeat center center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="h" id="hour"></div>
+        <div class="m" id="minute"></div>
+        <div class="s" id="second"></div>
+    </div>
+
+    <script>
+        //  获取标签
+        var hour = document.getElementById("hour");
+        var minute = document.getElementById("minute");
+        var second = document.getElementById("second");
+
+        var s=0,m=0,h=0,ms=0;
+        // 设置定时器
+        setInterval(function(){
+            // 获取当前时间
+            var date = new Date();
+            ms=date.getMilliseconds();
+            s= date.getSeconds() + ms/1000;
+            m = date.getMinutes() + s/60;
+            h = date.getHours()%12 +m/60;
+
+            // x旋转角度
+            second.style.transform = "rotate("+ s*6 +"deg)";
+                     //  变化            旋转    deg  度
+        minute.style.transform = "rotate("+ m*6 +"deg)";
+        hour.style.transform = "rotate("+ h*30 +"deg)";
+     
+        },100)
+    </script>
+</body>
+
+</html>
