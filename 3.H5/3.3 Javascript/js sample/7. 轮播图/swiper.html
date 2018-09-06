@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #box {
+            width: 400px;
+            height: 420px;
+            margin: 100px auto;
+            position: relative;
+          
+        }
+
+        .menu {
+            width: 400px;
+            height: 20px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        li {
+            margin-right: 15px;
+           
+        }
+
+        .current {
+            background-color: red;
+        }
+
+        .imgs {
+            float: left;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul class="menu">
+            <li class="current"><a  href="#">皮包1</a></li>
+            <li><a href="#">皮包2</a></li>
+            <li><a href="#">皮包3</a></li>
+            <li><a href="#">皮包4</a></li>
+            <li><a href="#">皮包5</a></li>
+        </ul>
+        <div class="imgs">
+            <img src="img/bag1.jpg" alt="">
+            <img src="img/bag2.jpg" alt="">
+            <img src="img/bag3.jpg" alt="">
+            <img src="img/bag4.jpg" alt="">
+            <img src="img/bag5.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+    window.onload = function(){
+        // 获取标签
+        var allLis = document.getElementsByTagName('li');
+        var allimg = document.getElementsByTagName('img');
+      
+        // 索引
+        var loop = 0;
+      
+        // 定时器
+        setInterval(function(){
+            loop +=1;
+            loop = loop % 5;
+            // 排他
+            for(var i=0;i<allLis.length;i++){
+                allLis[i].className="";
+                allimg[i].style.display = "none";
+            }
+
+            // 自己选中
+            allLis[loop].className = "current";
+            allimg[loop].style.display = "block";
+        },1000)
+    }
+    </script>
+</body>
+
+</html>
