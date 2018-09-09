@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>照片墙效果</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: none;
+    }
+
+    html, body, ul {
+        width: 100%;
+        height: 100%;
+    }
+    #ps {
+        position: relative;
+    }
+
+    #ps li {
+        width: 250px;
+        height: 160px;
+        box-shadow: 0 0 10px #000;
+        position: absolute;
+     
+    }
+
+    li img {
+        width: 100%;
+    }
+
+    #ps li.current {
+        left: 50% !important;
+        top: 50% !important;
+        transform: rotate(90deg) translate(-50%,-50%) scale(3,3) !important;
+        z-index: 99 !important;
+    }
+    </style>
+
+</head>
+<body>
+    <ul id="ps"></ul>
+
+    <script src="js/underscore-min.js"></script>
+    <script>
+        window.onload = function(){
+            // 1.获取需要都标签
+            var ps = document.getElementById("ps");
+
+            // 2 动态创建li
+            for(var i = 0; i < 15 ; i++){
+                // 动态创建li标签
+                var li = document.createElement("li");
+                ps.appendChild(li);
+
+                // 创建img标签
+                var img = document.createElement("img");
+                img.src = "img/WechatIMG"+ (i+1)+".jpeg";
+                li.appendChild(img);
+
+            }
+
+            //  获取所有都li标签
+            var allLis = ps.children;
+
+            // 求出屏幕都宽高度
+            // var screenW = document.documentElement.clientWidth -250;
+            var screenW = document.documentElement.clientWidth-350 ;
+            var screenH = document.documentElement.clientHeight - 170;
+
+            // 遍历
+            for( var j = 0; j<allLis.length;j++) {
+                var li =allLis[j];
+                console.log(li);
+                // 随机分布
+                // li.style.left = Math.random()*screenW+'px';
+                // li.style.top = Math.random()*screenH+'px';
+
+                li.style.left = _.random(0,screenW)+'px';
+                li.style.top = _.random(0,screenH)+'px';
+
+                // 随机角度
+                li.style.transform = 'rotate('+_.random(0,360)+'deg)';
+
+                // 监听点击事件
+                li.onclick =function(){
+                    for( var i = 0; i< allLis.length;i++){
+                            allLis[i].className = '';
+                    }
+                    this.className = 'current';
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
